@@ -1,27 +1,33 @@
+#Jaden Alberding
+
 import time
 import random
-import matplotlib
+
+import keyboard
 
 def main():
-    price = 0.5
+    price = 0.1
     volume = 0 
-    count = 0
-    stock = open("Stock_data.txt", 'w+')
-#    fig = matplotlib.figure()
-#    ax1.fig.add_subplot(1,1,1)
-    
-    while True:
+    count = 0   
+    while count < 259200 : # 3 days of data
+        stock = open("Stock_Data.txt", "a")
+
         high = random.uniform(0.0, float((price +(price * random.random()))))
-        price_change = random.uniform(-abs(price),high)
+        price_change = random.uniform(-abs(price - price * random.random()),high)
         price += price_change
         count += 1
-        total_price = [count,price]
-        stock.write(str(total_price))
-        print(str(total_price))
-        time.sleep(5)
-        
-        
+        stock.write(str(count))
+        stock.write(",")
+        stock.write(str(price))
+        stock.write("\n")
 
+        stock.close()
+        time.sleep(1)
+        
+    stock = open("Stock_Data.txt", "w")
+    stock.write("")
+    stock.close()
+    
     
 if __name__ == "__main__":
     main()
