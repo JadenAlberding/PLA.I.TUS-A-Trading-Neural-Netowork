@@ -15,3 +15,8 @@ def dot_product(input1, input2):
 
 def sigmoid(x):
     return 1/ (1+np.exp(-x))
+
+def make_prediction(input_v,weights, bias):
+    layer1 = dot_product(input_vector,weights) + bias
+    layer2 = sigmoid(layer1)
+    return layer2
