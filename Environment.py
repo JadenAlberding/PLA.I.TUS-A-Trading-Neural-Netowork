@@ -1,32 +1,34 @@
 #Jaden Alberding
 
+
 import time
 import random
-
+import math
 import keyboard
+import BrowianMotion as bm
 
 def main():
-    price = 0.1
-    volume = 0 
-    count = 0   
-    while count < 259200 : # 3 days of data
-        stock = open("Stock_Data.txt", "a")
 
-        high = random.uniform(0.0, float((price +(price * random.random()))))
-        price_change = random.uniform(-abs(price - price * random.random()),high)
-        price += price_change
-        count += 1
-        stock.write(str(count))
-        stock.write(",")
-        stock.write(str(price))
-        stock.write("\n")
-
-        stock.close()
-        time.sleep(1)
-        
     stock = open("Stock_Data.txt", "w")
+    volumeFile = open("Volume_Data.txt", "w")
     stock.write("")
+    volumeFile.write("")
     stock.close()
+    volumeFile.close()
+
+    price = 0.1
+    delta = 100 # standard deviation/Volitility
+    T = 30 
+    N =30# Seconds in a day
+    dt = T/N
+
+    volume = 1000
+    avg_volume = volume
+    count = 0   
+    bm.BrowianMotion(delta, N, dt, T, price)
+        #time.sleep(1)
+        
+    
     
     
 if __name__ == "__main__":
