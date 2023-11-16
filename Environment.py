@@ -16,10 +16,11 @@ def main():
     stock.close()
     volumeFile.close()
 
-    price = 0.1
-    delta = 100 # standard deviation/Volitility
-    T = 30 
-    N =30# Seconds in a day
+    price = 100
+    delta = 0.01 # standard deviation/Volitility
+    T = 1 # days
+    N = 
+    # Seconds in a day
     dt = T/N
 
     volume = 1000

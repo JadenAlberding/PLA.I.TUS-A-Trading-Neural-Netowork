@@ -9,18 +9,25 @@ import math
 def randomNum(delta, n, value, t, j):
     v = value
     count = j
-    print(count)
+    #print(count)
     for i in range(n):
         v = random.gauss(v,delta)
         stock = open("Stock_Data.txt", "a")
-        stock.write(str(count))
-        stock.write(",")
-        stock.write(str(v))
-        stock.write("\n")
-        stock.close()
-        print(i)
+        if v <= 0 :
+            stock.write(str(count))
+            stock.write(",")
+            stock.write(str(0.0))
+            stock.write("\n")
+            stock.close()
+        else:
+            stock.write(str(count))
+            stock.write(",")
+            stock.write(str(v))
+            stock.write("\n")
+            stock.close()
+        #print(i)
         count += 1/n
-        print(count)
+        #print(count)
         #print(count)
         
         #v = math.exp( (- (x **2 ))/ (2 * t )) / math.sqrt( math.pi * 2)
