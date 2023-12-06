@@ -13,7 +13,7 @@ style.use('fivethirtyeight')
 fig = plt.figure()
 ax1 = fig.add_subplot(1,1,1)
 
-
+temp = 0
 plt.subplots_adjust(hspace=0.9)
 
 def animate(i):
@@ -26,8 +26,10 @@ def animate(i):
             x, y = line.split(',')
             xs.append(float(x))
             ys.append(float(y))
+            
     ax1.clear()       
     ax1.plot(xs,ys)
+
 
 ani = animation.FuncAnimation(fig , animate , interval=1)
 plt.show()
