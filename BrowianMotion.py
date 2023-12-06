@@ -5,6 +5,9 @@
 
 import random
 import math
+import FileControl as fp
+
+
 
 def randomNum(delta, n, value, t, j):
     v = value
@@ -12,19 +15,14 @@ def randomNum(delta, n, value, t, j):
     #print(count)
     for i in range(n):
         v = random.gauss(v,delta)
-        stock = open("Stock_Data.txt", "a")
-        if v <= 0 :
-            stock.write(str(count))
-            stock.write(",")
-            stock.write(str(0.0))
-            stock.write("\n")
-            stock.close()
-        else:
-            stock.write(str(count))
-            stock.write(",")
-            stock.write(str(v))
-            stock.write("\n")
-            stock.close()
+        
+       # stock = open("Stock_Data.txt", "a")
+#        if v <= 0 :
+#            fp.write2ToFile(count, v, "Stock_Data.txt")
+#        else:
+#             fp.write2ToFile(count, v, "Stock_Data.txt")
+
+
         #print(i)
         count += 1/n
         #print(count)
@@ -34,10 +32,8 @@ def randomNum(delta, n, value, t, j):
         #print(v)
     return v
 
-def BrowianMotion(delta, N, dt, T, initalValue):
-    value = initalValue
-    for i in range(T):
-        value = randomNum(delta, N, value,T, i)
+def BrowianMotion(delta, N, dt, T, initalValue, i):
+    return randomNum(delta, N, initalValue,T, i)
         
 
 def main():
