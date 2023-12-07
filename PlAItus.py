@@ -18,7 +18,27 @@ Developer: Jaden Alberding
 
 
 import numpy as np
+import pandas as pd
+import FileControl as fc
 
+def getData():
+    return fc.combine2File("DNDTrainingDataAnswer.txt","DNDTrainingData.txt")
+
+
+
+
+def main():
+    data = getData()
+    data = np.array(data)
+    data = pd.DataFrame(data)
+    print(data)
+   
+    
+
+
+
+if __name__ == "__main__":
+    main()
 
 
 
