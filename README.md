@@ -1,5 +1,5 @@
-PLAITUS has the posibility to be a super efficient and effective 
-Trading A.I. with the goal of it being able to preform just as 
+PLAITUS is a passion project with the hopt to create a Trading 
+A.I. with the final goal of it being able to preform just as 
 well if not better than large trading corperations. The AI is a 
 custom neural network created from just numpy and logic. While 
 the root implimentation of the AI is based off of 
