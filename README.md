@@ -18,6 +18,13 @@ greek god of wealth. The inspiration of the name not only
 
 
 
+Dec 30, 2023:
+	Realized that the Ai will need to impliment a for of rienforcement
+	learning which is a bit different than the original direction of what
+	I thought was required. Learning deep reinforcement learning and 
+	documnetation on pytorch to get a better understanding.
+
+
 
 [1]    Samson Zhang, "Building a neural network FROM SCRATCH (no Tensorflow/Pytorch, just numpy & math)",https://www.youtube.com/watch?v=w8yWXqWQYmU&t=496s
 
